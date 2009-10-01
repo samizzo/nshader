@@ -1,0 +1,46 @@
+<Include>
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\InstalledProducts\NShader">
+    <Registry Name="Package" Value="{dd9b8cde-96a0-4442-bf6f-083a7f43d453}" Type="string" />
+    <Registry Name="UseInterface" Value="1" Type="integer" />
+  </Registry>
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Packages\{dd9b8cde-96a0-4442-bf6f-083a7f43d453}" Value="NShader.NShader, NShader, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Type="string">
+    <Registry Name="InprocServer32" Value="[SystemFolder]mscoree.dll" Type="string" />
+    <Registry Name="Class" Value="NShader.NShader" Type="string" />
+    <Registry Name="CodeBase" Value="[#File_NShader.dll]" Type="string" />
+    <Registry Name="ID" Value="113" Type="integer" />
+    <Registry Name="MinEdition" Value="Standard" Type="string" />
+    <Registry Name="ProductVersion" Value="1.0" Type="string" />
+    <Registry Name="ProductName" Value="NShader" Type="string" />
+    <Registry Name="CompanyName" Value="Alexandre Mutel" Type="string" />
+  </Registry>
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.cg" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.cgfx" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.fp" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.frag" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.fx" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.glsl" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.vert" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.vp" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\Language Services\Shader Language" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string">
+    <Registry Name="Package" Value="{dd9b8cde-96a0-4442-bf6f-083a7f43d453}" Type="string" />
+    <Registry Name="LangResID" Value="0" Type="integer" />
+    <Registry Name="EnableLineNumbersOption" Value="1" Type="integer" />
+    <Registry Name="EnableCommenting" Value="1" Type="integer" />
+    <Registry Name="EnableFormatSelection" Value="1" Type="integer" />
+  </Registry>
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Services\{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Value="{dd9b8cde-96a0-4442-bf6f-083a7f43d453}" Type="string">
+    <Registry Name="Name" Value="Shader Language Service" Type="string" />
+  </Registry>
+</Include>

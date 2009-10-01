@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Visual Studio Integration for NShader
+  Installer root features, upgrades, and product definition
+-->
+
+<?define ProductShortName = "NShader" ?>
+<?define ProductDescription = "NShader is an extension to Visual Studio 2008 that provides syntax highlighting for various shader languages including HLSL - GLSL - CG" ?>
+<?define ProductVersion = "1.0.0" ?>
+<?define ProductVersionText = "1.0" ?>
+<?define Manufacturer = "Alexandre Mutel" ?>
+<?define UpgradeCode = "737E3D12-4902-4ecc-82E4-1EAFA99CA5B7" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2003/01/wi">
+
+  <?include $(var.VariablesFile)?>
+
+  <Product Id="A1F4FB9B-FF9A-45af-A235-097719A80A15" UpgradeCode="$(var.UpgradeCode)" Name="$(var.ProductShortName) $(var.ProductVersionText)" Version="$(var.ProductVersion)" Language="$(var.ProductLanguage)" Manufacturer="$(var.Manufacturer)">
+    <Package Id="7E1E5B02-9F98-4c2f-9D8F-90F33FA1360E" Compressed="yes" Description="$(var.ProductDescription). $(var.ProductShortName) $(var.ProductVersionText) ($(var.ProductVersion))" InstallerVersion="200" ShortNames="no" Manufacturer="$(var.Manufacturer)" Platforms="Intel" />
+    <Media Id="1" Cabinet="NShader.cab" EmbedCab="yes" />
+
+    <!-- Major upgrade -->
+    <Upgrade Id="$(var.UpgradeCode)">
+      <UpgradeVersion Minimum="$(var.ProductVersion)" OnlyDetect="yes" Property="NEWERVERSIONDETECTED" />
+      <UpgradeVersion Minimum="0.0.0" IncludeMinimum="yes" Maximum="$(var.ProductVersion)" IncludeMaximum="no" Property="OLDERVERSIONBEINGUPGRADED" />
+    </Upgrade>
+
+    <!-- Specify Icon for Add and Remove programs -->
+    <Icon Id='NShader.dll.exe' SourceFile='Bitmaps\PackageIcon16x16.ico'/>
+
+    <!-- Properties -->
+    <Property Id="ARPPRODUCTICON" Value="NShader.dll.exe" />
+    <Property Id="ALLUSERS" Value="1" />
+    <Property Id="ARPHELPLINK" Value="http://msdn.microsoft.com/vstudio/extend/" />
+    <Property Id="ARPURLINFOABOUT" Value="http://msdn.microsoft.com/" />
+    <Property Id="ARPURLUPDATEINFO" Value="http://msdn.microsoft.com/vstudio/extend/" />
+    <Property Id="DEVENV_DIR">
+      <RegistrySearch Id="RegSearch_Devenv_Directory" Root="HKLM" Key="$(var.VisualStudioRegistryRoot)\Setup\VS" Name="EnvironmentDirectory" Type="raw" />
+    </Property>
+    <Property Id="VS_DIR">
+      <RegistrySearch Id="RegSearch_VsInstall_Path" Root="HKLM" Key="$(var.VisualStudioRegistryRoot)\Setup\VS" Name="ProductDir" Type="raw" />
+    </Property>
+    <Property Id="DEVENV_EXE_PATH">
+      <RegistrySearch Id="RegSearch_DevenvExe_Path" Root="HKLM" Key="$(var.VisualStudioRegistryRoot)\Setup\VS" Name="EnvironmentPath" Type="raw" />
+    </Property>
+
+    <!-- Launch conditions -->
+    <Condition Message="An administrator must approve or install [ProductName]."> Privileged </Condition>
+    <Condition Message="A later version of [ProductName] is already installed."> NOT NEWERVERSIONDETECTED </Condition>
+    <Condition Message="[ProductName] requires Visual Studio 2008."> DEVENV_EXE_PATH </Condition>
+
+    <!-- Root directories -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder" Name="PFILES">
+        <Directory Id="INSTALLDIR" Name="NShader" LongName="Visual Studio Integration for NShader">
+        </Directory>
+      </Directory>
+    </Directory>
+    
+        <!-- Root feature -->
+    <Feature Id="Feature_NShader" ConfigurableDirectory="INSTALLDIR" Absent="disallow" AllowAdvertise="no" Display="hidden" Level="1" Title="NShader Integration">
+      <ComponentGroupRef Id="CompGroup_Integration" />
+    </Feature>
+
+    <!-- Custom actions -->
+    <CustomAction Id="CA_DevenvSetup" Property="DEVENV_EXE_PATH" ExeCommand="/setup"  Impersonate="no" Execute="deferred" />
+
+    <!-- UI ProgressText -->
+    <UI>
+        <ProgressText Action="CA_DevenvSetup">Registering NShader to Visual Studio 2008... (this may take a few minutes)</ProgressText>
+    </UI> 
+
+    <!-- Sequences -->
+    <InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallValidate" />
+      <!-- Runs during both install and uninstall -->
+      <Custom Action="CA_DevenvSetup" Before="InstallFinalize" />
+    </InstallExecuteSequence>
+
+    <InstallUISequence>
+      <!-- Because we have a launch condition that uses the results of FindRelatedProducts, put it first. -->
+      <LaunchConditions After="FindRelatedProducts" />
+    </InstallUISequence>
+
+    <!-- User interface -->
+    <UIRef Id="WixUI_Minimal" />
+    <UIRef Id="WixUI_ErrorProgressText" />    
+  </Product>
+</Wix>

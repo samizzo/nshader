@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<!--
+Copyright (c) Microsoft Corporation. All rights reserved.
+This code is licensed under the Visual Studio SDK license terms.
+THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+-->
+
+<Include>
+
+  <!-- GUIDs for the components -->
+  <?define Comp_LanguageService_Guid=dd9b8cde-96a0-4442-bf6f-083a7f43d453?>
+
+  <!-- Token of the public key used to sign the assemblies -->
+  <?define PublicKeyToken=null?>
+
+  <!-- Relative path of the folder with the binaries -->
+  <?define IntegrationBinPath=..\Bin\Release?>
+
+  <?define VisualStudioRegistryRoot = "Software\Microsoft\VisualStudio\9.0" ?>
+</Include>
