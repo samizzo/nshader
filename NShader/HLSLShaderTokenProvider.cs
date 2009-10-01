@@ -213,6 +213,9 @@ namespace NShader
             AddToDictionary("texCUBEproj",ShaderToken.INTRINSIC);
             AddToDictionary("transpose",ShaderToken.INTRINSIC);
             AddToDictionary("trunc",ShaderToken.INTRINSIC);
+            AddToDictionary("sampler", ShaderToken.KEYWORD_FX);
+            AddToDictionary("samplerstate", ShaderToken.KEYWORD_FX);
+            AddToDictionary("SamplerComparisonState", ShaderToken.KEYWORD_FX);
             AddToDictionary("blendstate",ShaderToken.KEYWORD_FX);
             AddToDictionary("compile",ShaderToken.KEYWORD_FX);
             AddToDictionary("depthstencilstate",ShaderToken.KEYWORD_FX);
