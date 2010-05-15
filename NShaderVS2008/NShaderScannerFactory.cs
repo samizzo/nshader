@@ -17,6 +17,8 @@
 #endregion
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.VisualStudio.Package;
+using Microsoft.VisualStudio.TextManager.Interop;
 
 namespace NShader
 {
@@ -33,6 +35,9 @@ namespace NShader
             // HLSL Scanner
             hlslScanner = new NShaderScanner(new HLSLShaderTokenProvider());
             mapExtensionToScanner.Add(NShaderSupportedExtensions.HLSL_FX,hlslScanner);
+            mapExtensionToScanner.Add(NShaderSupportedExtensions.HLSL_HLSL, hlslScanner);
+            mapExtensionToScanner.Add(NShaderSupportedExtensions.HLSL_VSH, hlslScanner);
+            mapExtensionToScanner.Add(NShaderSupportedExtensions.HLSL_PSH, hlslScanner);
 
             // GLSL Scanner
             glslScanner = new NShaderScanner(new GLSLShaderTokenProvider());
@@ -48,7 +53,7 @@ namespace NShader
             mapExtensionToScanner.Add(NShaderSupportedExtensions.CG_CGFX, cgScanner);
         }
 
-        public static NShaderScanner GetScannerFromFilename(string filepath)
+        public static NShaderScanner GetShaderScanner(string filepath)
         {
             string ext = Path.GetExtension(filepath).ToLower();
             NShaderScanner scanner;
@@ -57,6 +62,11 @@ namespace NShader
                 scanner = hlslScanner;
             }
             return scanner;
+        }
+
+        public static NShaderScanner GetShaderScanner(IVsTextLines buffer)
+        {
+            return GetShaderScanner(FilePathUtilities.GetFilePath(buffer));
         }
     }
 }

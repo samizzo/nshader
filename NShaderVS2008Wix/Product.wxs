@@ -10,7 +10,7 @@
 <?define ProductVersionText = "1.1" ?>
 <?define Manufacturer = "Alexandre Mutel" ?>
 <?define UpgradeCode = "737E3D12-4902-4ecc-82E4-1EAFA99CA5B7" ?>
-<?define ProductCode = "A1F4FB9B-FF9A-45af-A235-097719A80A15" ?>
+<?define ProductCode = "24E159B3-9D95-48cc-8A29-C48EB4184487" ?>
 
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
@@ -31,6 +31,7 @@
 
     <PropertyRef Id="VS90DEVENV" />
     <PropertyRef Id="VS90_ROOT_FOLDER" />
+<!--    <PropertyRef Id="VS2010DEVENV"/> -->
     <CustomActionRef Id="VS90Setup" />
 
     <!-- Properties -->
@@ -84,6 +85,8 @@
 
     <!-- User interface -->
     <UIRef Id="WixUI_Minimal" />
+    <!--<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR"/>
+    <UIRef Id="NShaderInstallDirUI" />-->
     <UIRef Id="WixUI_ErrorProgressText" />
     <WixVariable Id="WixUIDialogBmp" Value="Bitmaps\dialog.bmp" />
     <WixVariable Id="WixUIBannerBmp" Value="Bitmaps\banner.bmp" />

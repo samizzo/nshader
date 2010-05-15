@@ -32,14 +32,14 @@ namespace NShader
         {
             m_colorableItems = new ColorableItem[]
                                    {
-                                        new NShaderColorableItem("Keyword", "Shader Language - Keyword", COLORINDEX.CI_BLUE, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Comment", "Shader Language - Comment", COLORINDEX.CI_DARKGREEN, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Identifier", "Shader Language - Identifier", COLORINDEX.CI_SYSPLAINTEXT_FG, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("String", "Shader Language - String", COLORINDEX.CI_RED, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Number", "Shader Language - Number", COLORINDEX.CI_DARKBLUE, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Intrinsic", "Shader Language - Intrinsic", COLORINDEX.CI_MAROON, COLORINDEX.CI_USERTEXT_BK, FONTFLAGS.FF_BOLD),
-                                        new NShaderColorableItem("Special", "Shader Language - Special", COLORINDEX.CI_AQUAMARINE, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Preprocessor", "Shader Language - Preprocessor", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK),
+                                        /*1*/ new NShaderColorableItem("Shader Language - Keyword", "Shader Language - Keyword", COLORINDEX.CI_BLUE, COLORINDEX.CI_USERTEXT_BK),
+                                        /*2*/ new NShaderColorableItem("Shader Language - Comment", "Shader Language - Comment", COLORINDEX.CI_DARKGREEN, COLORINDEX.CI_USERTEXT_BK),
+                                        /*3*/ new NShaderColorableItem("Shader Language - Identifier", "Shader Language - Identifier", COLORINDEX.CI_SYSPLAINTEXT_FG, COLORINDEX.CI_USERTEXT_BK),
+                                        /*4*/ new NShaderColorableItem("Shader Language - String", "Shader Language - String", COLORINDEX.CI_RED, COLORINDEX.CI_USERTEXT_BK),
+                                        /*5*/ new NShaderColorableItem("Shader Language - Number", "Shader Language - Number", COLORINDEX.CI_DARKBLUE, COLORINDEX.CI_USERTEXT_BK),
+                                        /*6*/ new NShaderColorableItem("Shader Language - Intrinsic", "Shader Language - Intrinsic", COLORINDEX.CI_MAROON, COLORINDEX.CI_USERTEXT_BK, FONTFLAGS.FF_BOLD),
+                                        /*7*/ new NShaderColorableItem("Shader Language - Special", "Shader Language - Special", COLORINDEX.CI_AQUAMARINE, COLORINDEX.CI_USERTEXT_BK),
+                                        /*8*/ new NShaderColorableItem("Shader Language - Preprocessor", "Shader Language - Preprocessor", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK),
                                    };
         }
 
@@ -76,11 +76,14 @@ namespace NShader
         public override IScanner GetScanner(IVsTextLines buffer)
         {
             string filePath = FilePathUtilities.GetFilePath(buffer);
-
             // Return dynamic scanner based on file extension
-            return NShaderScannerFactory.GetScannerFromFilename(filePath);
+            return NShaderScannerFactory.GetShaderScanner(filePath);
         }
 
+        public override Source CreateSource(IVsTextLines buffer)
+        {
+            return new NShaderSource(this, buffer, GetColorizer(buffer));
+        }
 
         public override AuthoringScope ParseSource(ParseRequest req)
         {

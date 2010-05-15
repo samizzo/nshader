@@ -44,17 +44,25 @@ namespace NShader
     // when you debug your package you want to register it in the experimental hive. This
     // attribute specifies the registry root to use if no one is provided to regpkg.exe with
     // the /root switch.
+#if VISUAL_STUDIO_2010
+    [DefaultRegistryRoot("Software\\Microsoft\\VisualStudio\\10.0Exp")]
+#else
     [DefaultRegistryRoot("Software\\Microsoft\\VisualStudio\\9.0")]
+#endif
     // This attribute is used to register the informations needed to show the this package
     // in the Help/About dialog of Visual Studio.
     // Loaded from Package IVsInstalledProduct methods
+#if !VISUAL_STUDIO_2010
     [InstalledProductRegistration(true, "#110", "#112", NShaderVersion.VERSION, IconResourceID = 400)]
+#endif
     //[InstalledProductRegistration(true, null, null, null)]
     // In order be loaded inside Visual Studio in a machine that has not the VS SDK installed, 
     // package needs to have a valid load key (it can be requested at 
     // http://msdn.microsoft.com/vstudio/extend/). This attributes tells the shell that this 
     // package has a load key embedded in its resources.
+#if !VISUAL_STUDIO_2010
     [ProvideLoadKey("Standard", NShaderVersion.VERSION, "NShader", "Alexandre Mutel", 113)]
+#endif
     [ProvideService(typeof(NShaderLanguageService), ServiceName = "Shader Language Service")]
     [ProvideLanguageServiceAttribute(typeof(NShaderLanguageService),
                              "Shader Language",
@@ -65,10 +73,14 @@ namespace NShader
         //RequestStockColors = false
                              )]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FX)]
+    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_HLSL)]
+    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_VSH)]
+    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_PSH)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_FRAG)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_VERT)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_FP)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_VP)]
+    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_GEOM)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_GLSL)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.CG_CG)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.CG_CGFX)]

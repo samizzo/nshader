@@ -52,15 +52,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GLSLShaderTokenProvider.cs" />
+    <Compile Include="..\NShaderCommon\EnumMap.cs" />
+    <Compile Include="..\NShaderCommon\GLSLShaderTokenProvider.cs" />
     <Compile Include="Guids.cs" />
-    <Compile Include="HLSLShaderTokenProvider.cs" />
-    <Compile Include="IErrorHandler.cs" />
-    <Compile Include="IShaderTokenProvider.cs" />
+    <Compile Include="..\NShaderCommon\HLSLShaderTokenProvider.cs" />
+    <Compile Include="..\NShaderCommon\IErrorHandler.cs" />
+    <Compile Include="..\NShaderCommon\IShaderTokenProvider.cs" />
     <Compile Include="NShaderColorableItem.cs" />
+    <Compile Include="NShaderFormatHelper.cs" />
     <Compile Include="NShaderLanguageService.cs" />
     <Compile Include="NShaderScanner.cs" />
     <Compile Include="NShaderScannerFactory.cs" />
+    <Compile Include="NShaderSource.cs" />
     <Compile Include="NShaderSupportedExtensions.cs" />
     <Compile Include="NShaderVersion.cs" />
     <Compile Include="Resources.Designer.cs">
@@ -71,8 +74,8 @@
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="NShader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShaderMPlexer.cs" />
-    <Compile Include="ShaderToken.cs" />
+    <Compile Include="..\NShaderCommon\ShaderMPlexer.cs" />
+    <Compile Include="..\NShaderCommon\ShaderToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
@@ -88,7 +91,8 @@
     <Content Include="Resources\Package.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ShaderMPLexer.lex" />
+    <EmbeddedResource Include="..\NShaderCommon\HLSLKeywords.map" />
+    <None Include="..\NShaderCommon\ShaderMPLexer.lex" />
   </ItemGroup>
   <PropertyGroup>
     <!--

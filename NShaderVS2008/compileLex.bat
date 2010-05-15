@@ -1,1 +1,1 @@
-"C:\Program Files\Microsoft Visual Studio 2008 SDK\VisualStudioIntegration\Tools\bin\MPLex.exe" /noparser /out:ShaderMPLexer.cs ShaderMPLexer.lex
+"C:\Program Files (x86)\Microsoft Visual Studio 2008 SDK\VisualStudioIntegration\Tools\bin\MPLex.exe" /noparser /out:ShaderMPLexer.cs ShaderMPLexer.lex

@@ -35,6 +35,14 @@ namespace NShader
             lex.SetSource(source, offset);
         }
 
+        public Scanner Lexer
+        {
+            get
+            {
+                return lex;
+            }
+        }
+
         public bool ScanTokenAndProvideInfoAboutIt(TokenInfo tokenInfo, ref int state)
         {
 

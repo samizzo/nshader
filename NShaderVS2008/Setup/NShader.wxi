@@ -11,7 +11,7 @@
     <Registry Name="CodeBase" Value="[#File_NShader.dll]" Type="string" />
     <Registry Name="ID" Value="113" Type="integer" />
     <Registry Name="MinEdition" Value="Standard" Type="string" />
-    <Registry Name="ProductVersion" Value="1.0" Type="string" />
+    <Registry Name="ProductVersion" Value="1.1" Type="string" />
     <Registry Name="ProductName" Value="NShader" Type="string" />
     <Registry Name="CompanyName" Value="Alexandre Mutel" Type="string" />
   </Registry>
@@ -26,11 +26,19 @@
 
   <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.fx" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
 
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.geom" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
   <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.glsl" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.hlsl" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.psh" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
 
   <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.vert" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
 
   <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.vp" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
+
+  <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\File Extensions\.vsh" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string" />
 
   <Registry Root="HKLM" Key="Software\Microsoft\VisualStudio\9.0\Languages\Language Services\Shader Language" Value="{41c4ec66-3b7b-3478-80f7-8c39bcd67345}" Type="string">
     <Registry Name="Package" Value="{dd9b8cde-96a0-4442-bf6f-083a7f43d453}" Type="string" />

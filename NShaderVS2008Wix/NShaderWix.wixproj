@@ -1,0 +1,56 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.0</ProductVersion>
+    <ProjectGuid>{06a7393c-7111-454b-a991-be1b61b13ec2}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>NShader</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.5\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.5\Wix.targets</WixTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>VariablesFile=Variables.wxi;ProductLanguage=1033</DefineConstants>
+    <Cultures>en-US</Cultures>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Integration.wxs" />
+    <Compile Include="NShaderInstallDirDlg.wxs" />
+    <Compile Include="NShaderInstallDirUI.wxs" />
+    <Compile Include="Product.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NShader.wxi" />
+    <Content Include="Variables.wxi" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixVSExtension">
+      <HintPath>$(WixExtDir)\WixVSExtension.dll</HintPath>
+      <Name>WixVSExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+  <PropertyGroup>
+    <PreBuildEvent>"C:\Program Files (x86)\Microsoft Visual Studio 2008 SDK\VisualStudioIntegration\Tools\Bin\RegPkg.exe" /codebase /root:Software\Microsoft\VisualStudio\9.0 /wixfile:$(ProjectDir)NShader.wxi $(SolutionDir)\NShaderVS2008\bin\Release\NShader.dll</PreBuildEvent>
+  </PropertyGroup>
+</Project>

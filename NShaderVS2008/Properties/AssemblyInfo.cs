@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Reflection;
+#if VISUAL_STUDIO_2010
 using System.Resources;
+#endif
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -17,8 +19,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]   
 [assembly: ComVisible(false)]     
 [assembly: CLSCompliant(false)]
+#if VISUAL_STUDIO_2010
 [assembly: NeutralResourcesLanguage("en-US")]
-
+#endif
 // Version information for an assembly consists of the following four values:
 //
 //      Major Version
@@ -29,8 +32,8 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion(NShader.NShaderVersion.ASSEMBLY_VERSION)]
+[assembly: AssemblyFileVersion(NShader.NShaderVersion.ASSEMBLY_FILE_VERSION)]
 
 
 
