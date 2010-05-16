@@ -45,7 +45,7 @@ namespace NShader
     // attribute specifies the registry root to use if no one is provided to regpkg.exe with
     // the /root switch.
 #if VISUAL_STUDIO_2010
-    [DefaultRegistryRoot("Software\\Microsoft\\VisualStudio\\10.0Exp")]
+    [DefaultRegistryRoot("Software\\Microsoft\\VisualStudio\\10.0")]
 #else
     [DefaultRegistryRoot("Software\\Microsoft\\VisualStudio\\9.0")]
 #endif
