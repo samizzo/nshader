@@ -49,6 +49,5 @@ namespace NShader
             }
             return token;
         }
-
     }
 }

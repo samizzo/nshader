@@ -76,6 +76,10 @@ namespace NShader
                         tokenInfo.Color = TokenColor.Number;
                         tokenInfo.Type = TokenType.Literal;
                         break;
+                    case ShaderToken.STRING_LITERAL:
+                        tokenInfo.Color = TokenColor.String;
+                        tokenInfo.Type = TokenType.Literal;
+                        break;
                     case ShaderToken.INTRINSIC:
                         // hugly. TODO generate a NShaderTokenColor to keep tracks of 6-7-8 TokenColors
                         tokenInfo.Color = (TokenColor)6;

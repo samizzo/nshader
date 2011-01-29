@@ -28,36 +28,37 @@ namespace NShader
         private static NShaderScanner cgScanner;
         private static Dictionary<string, NShaderScanner> mapExtensionToScanner;
 
-        static NShaderScannerFactory() {
+        static void Init() {
+            if (mapExtensionToScanner == null)
+            {
+                mapExtensionToScanner = new Dictionary<string, NShaderScanner>();
 
-            mapExtensionToScanner = new Dictionary<string, NShaderScanner>();
+                // HLSL Scanner
+                hlslScanner = new NShaderScanner(new HLSLShaderTokenProvider());
+                // GLSL Scanner
+                glslScanner = new NShaderScanner(new GLSLShaderTokenProvider());
+                // CG Scanner
+                cgScanner = new NShaderScanner(new HLSLShaderTokenProvider());
 
-            // HLSL Scanner
-            hlslScanner = new NShaderScanner(new HLSLShaderTokenProvider());
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.HLSL_FX,hlslScanner);
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.HLSL_HLSL, hlslScanner);
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.HLSL_VSH, hlslScanner);
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.HLSL_PSH, hlslScanner);
-
-            // GLSL Scanner
-            glslScanner = new NShaderScanner(new GLSLShaderTokenProvider());
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.GLSL_FRAG, glslScanner);
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.GLSL_VERT, glslScanner);
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.GLSL_FP, glslScanner);
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.GLSL_VP, glslScanner);
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.GLSL_GLSL, glslScanner);
-
-            // CG Scanner
-            cgScanner = new NShaderScanner(new HLSLShaderTokenProvider());
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.CG_CG, cgScanner);
-            mapExtensionToScanner.Add(NShaderSupportedExtensions.CG_CGFX, cgScanner);
+                foreach (var field in typeof (NShaderSupportedExtensions).GetFields())
+                {
+                    if (field.Name.StartsWith("HLSL_"))
+                        mapExtensionToScanner.Add(field.GetValue(null).ToString(), hlslScanner);
+                    if (field.Name.StartsWith("GLSL_"))
+                        mapExtensionToScanner.Add(field.GetValue(null).ToString(), glslScanner);
+                    if (field.Name.StartsWith("CG_"))
+                        mapExtensionToScanner.Add(field.GetValue(null).ToString(), cgScanner);
+                }
+            }
         }
 
         public static NShaderScanner GetShaderScanner(string filepath)
         {
+            Init();
+
             string ext = Path.GetExtension(filepath).ToLower();
             NShaderScanner scanner;
-            if ( ! mapExtensionToScanner.TryGetValue(ext, out scanner) )
+            if (!mapExtensionToScanner.TryGetValue(ext, out scanner))
             {
                 scanner = hlslScanner;
             }

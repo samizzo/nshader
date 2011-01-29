@@ -69,10 +69,10 @@ namespace NShader
                              0,
                              EnableCommenting = true,
                              EnableFormatSelection =  true,
-                             EnableLineNumbers =  true                             
-        //RequestStockColors = false
+                             EnableLineNumbers =  true
                              )]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FX)]
+    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FXH)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_HLSL)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_VSH)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_PSH)]
