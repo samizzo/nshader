@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NShader")]
-[assembly: AssemblyDescription("NShader is an extension to Visual Studio 2008 that provides syntax highlighting for various shader languages including HLSL - GLSL - CG.")]
+[assembly: AssemblyDescription("NShader is an extension to Visual Studio 2008/2010/2012 that provides syntax highlighting for various shader languages including HLSL - GLSL - CG.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Alexandre Mutel")]
 [assembly: AssemblyProduct("NShader")]

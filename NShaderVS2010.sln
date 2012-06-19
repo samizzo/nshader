@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NShader", "NShaderVS2008\NShaderVS2010.csproj", "{30E0D862-E444-4FD6-9979-D5CF2D9F9C5D}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NShaderVS2010", "NShaderVS2008\NShaderVS2010.csproj", "{30E0D862-E444-4FD6-9979-D5CF2D9F9C5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
