@@ -28,8 +28,19 @@ namespace NShader
     {
         public void Load(string resource)
         {
-            Stream file = typeof(T).Assembly.GetManifestResourceStream(typeof(T).Assembly.GetName().Name + "." + resource);
-            TextReader textReader = new StreamReader(file);
+            var customResourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NShader", resource);
+
+            TextReader textReader;
+            if (File.Exists(customResourcePath))
+            {
+                textReader = new StreamReader(customResourcePath);
+            }
+            else
+            {
+                Stream file = typeof(T).Assembly.GetManifestResourceStream(typeof(T).Assembly.GetName().Name + "." + resource);
+                textReader = new StreamReader(file);
+            }
+
             string line;
             while ((line = textReader.ReadLine()) != null )
             {

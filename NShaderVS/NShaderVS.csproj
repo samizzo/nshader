@@ -137,9 +137,9 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
-    <EmbeddedResource Include="UNITYKeywords.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UNITYKeywords.map" />
     <EmbeddedResource Include="VSPackage2010.resx" />
   </ItemGroup>
   <PropertyGroup>
