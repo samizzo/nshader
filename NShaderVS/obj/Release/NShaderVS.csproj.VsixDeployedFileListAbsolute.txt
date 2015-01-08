@@ -1,0 +1,7 @@
+C:\Users\issam\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Alexandre Mutel\NShader\1.4\\NShader.dll
+C:\Users\issam\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Alexandre Mutel\NShader\1.4\\NShader.pkgdef
+C:\Users\issam\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Alexandre Mutel\NShader\1.4\\extension.vsixmanifest
+C:\Users\issam\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Alexandre Mutel\NShader\1.4\\NShaderVS.png
+C:\Users\issam\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Alexandre Mutel\NShader\1.4\\PackageIcon.ico
+C:\Users\issam\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Alexandre Mutel\NShader\1.4\\License.rtf
+C:\Users\issam\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Alexandre Mutel\NShader\1.4\\NShader.pdb

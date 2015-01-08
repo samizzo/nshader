@@ -1,0 +1,17 @@
+C:\Work\Tools\nshader\NShaderVS\obj\Debug\NShaderVS.csprojResolveAssemblyReference.cache
+C:\Work\Tools\nshader\NShaderVS\obj\Debug\NShader.VSPackage2010.resources
+C:\Work\Tools\nshader\NShaderVS\obj\Debug\NShaderVS.csproj.GenerateResource.Cache
+C:\Work\Tools\nshader\NShaderVS\bin\Debug\NShaderVS.png
+C:\Work\Tools\nshader\NShaderVS\bin\Debug\PackageIcon.ico
+C:\Work\Tools\nshader\NShaderVS\bin\Debug\License.rtf
+C:\Work\Tools\nshader\NShaderVS\bin\Debug\NShader.dll.config
+C:\Work\Tools\nshader\NShaderVS\bin\Debug\NShader.dll
+C:\Work\Tools\nshader\NShaderVS\bin\Debug\NShader.pdb
+C:\Work\Tools\nshader\NShaderVS\bin\Debug\NShader.pkgdef
+C:\Work\Tools\nshader\NShaderVS\bin\Debug\NShader.vsix
+C:\Work\Tools\nshader\NShaderVS\bin\Debug\extension.vsixmanifest
+C:\Work\Tools\nshader\NShaderVS\obj\Debug\NShader.dll
+C:\Work\Tools\nshader\NShaderVS\obj\Debug\NShader.pdb
+C:\Work\Tools\nshader\NShaderVS\obj\Debug\NShader.pkgdef
+C:\Work\Tools\nshader\NShaderVS\obj\Debug\NShader.latest.pkgdef
+C:\Work\Tools\nshader\NShaderVS\obj\Debug\extension.vsixmanifest

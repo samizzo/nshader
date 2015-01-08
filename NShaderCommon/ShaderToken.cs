@@ -40,6 +40,10 @@ namespace NShader.Lexer
         LEFT_PARENTHESIS, 
         RIGHT_PARENTHESIS, 
         LEFT_SQUARE_BRACKET, 
-        RIGHT_SQUARE_BRACKET
+        RIGHT_SQUARE_BRACKET,
+        UNITY_STRUCTURE,
+        UNITY_TYPE,
+        UNITY_VALUE,
+        UNITY_FIXED
     }
 }

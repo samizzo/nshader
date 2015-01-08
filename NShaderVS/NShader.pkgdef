@@ -1,0 +1,52 @@
+Windows Registry Editor Version 5.00
+
+[$RootKey$\InstalledProducts\NShader]
+"Package"="{dd9b8cde-96a0-4442-bf6f-083a7f43d453}"
+"UseInterface"=dword:00000001
+[$RootKey$\Packages\{dd9b8cde-96a0-4442-bf6f-083a7f43d453}]
+@="NShader.NShader, NShader, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null"
+"InprocServer32"="%windir%\\SYSTEM32\\MSCOREE.DLL"
+"CodeBase"="%localappdata%\\Microsoft\\VisualStudio\\10.0\\Extensions\\Alexandre Mutel\\NShader\\1.1\\NShader.dll"
+"Class"="NShader.NShader"
+"Assembly"="NShader, Version=1.1.0.0, Culture=neutral, PublicKeyToken=null"
+[$RootKey$\Languages\File Extensions\.cg]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.cgfx]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.fp]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.frag]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.fx]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.geom]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.glsl]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.hlsl]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.psh]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.vert]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.vp]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\File Extensions\.vsh]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+[$RootKey$\Languages\Language Services\Shader Language]
+@="{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}"
+"Package"="{dd9b8cde-96a0-4442-bf6f-083a7f43d453}"
+"LangResID"=dword:00000000
+"EnableLineNumbersOption"=dword:00000001
+"EnableCommenting"=dword:00000001
+"EnableFormatSelection"=dword:00000001
+[$RootKey$\Packages\{dd9b8cde-96a0-4442-bf6f-083a7f43d453}]
+"ID"=dword:00000071
+"MinEdition"="Standard"
+"ProductVersion"="1.1"
+"ProductName"="NShader"
+"CompanyName"="Alexandre Mutel"
+[$RootKey$\Services\{b2483f0c-3bbe-3445-b6c2-2d38cb45f14d}]
+@="{dd9b8cde-96a0-4442-bf6f-083a7f43d453}"
+"Name"="Shader Language Service"
+
