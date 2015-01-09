@@ -48,23 +48,8 @@ namespace NShader
 
         public NShaderLanguageService()
         {
-
-            //Clean VS instance if changing this : http://blog.majcica.com/tag/createexpinstance/
+            //You might need to clean VS experimental instance if changing this : http://blog.majcica.com/tag/createexpinstance/
             //http://msdn.microsoft.com/en-us/library/dd875761.aspx
-            /*m_colorableItems = new ColorableItem[]
-                                   {
-                                        new NShaderColorableItem("Shader Language - Default", "Shader Language - Default", COLORINDEX.CI_BLUE, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Shader Language - Keyword", "Shader Language - Keyword", COLORINDEX.CI_BLUE, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Shader Language - Comment", "Shader Language - Comment", COLORINDEX.CI_DARKGREEN, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Shader Language - Identifier", "Shader Language - Identifier", COLORINDEX.CI_SYSPLAINTEXT_FG, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Shader Language - String", "Shader Language - String", COLORINDEX.CI_RED, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Shader Language - Number", "Shader Language - Number", COLORINDEX.CI_DARKBLUE, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Shader Language - Intrinsic", "Shader Language - Intrinsic", COLORINDEX.CI_MAROON, COLORINDEX.CI_USERTEXT_BK, FONTFLAGS.FF_BOLD),
-                                        new NShaderColorableItem("Shader Language - Special", "Shader Language - Special", COLORINDEX.CI_AQUAMARINE, COLORINDEX.CI_USERTEXT_BK),
-                                        new NShaderColorableItem("Shader Language - Preprocessor", "Shader Language - Preprocessor", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK),
-                                   }; 
-            */
-
             m_colorableItems = new ColorableItem[]
             {
                 new NShaderColorableItem("NShader - PLAIN TEXT", COLORINDEX.CI_BLUE, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.CornflowerBlue, System.Drawing.Color.Empty),
@@ -81,9 +66,6 @@ namespace NShader
                 new NShaderColorableItem("NShader - Unity - Value", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Maroon, System.Drawing.Color.Empty),        //11
                 new NShaderColorableItem("NShader - Unity - Fixed", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Maroon, System.Drawing.Color.Empty),        //12
             };
-
-
-
         }
 
 
