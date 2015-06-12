@@ -20,7 +20,7 @@ where `<type>` is one of:
     cg
     unity
 
-This will force the file to use the specified syntax highlighter. This is case sensitive and must appear exactly as above. Otherwise if the 'shadertype'
+This will force the file to use the specified syntax highlighter. This is case sensitive and must appear exactly as above. Otherwise if the `shadertype`
 tag is not present, the file extension will be used to decide what type of highlighting to use. The extension mapping is as follows:
 
     HLSL syntax highlighter - .fx, .fxh, .hlsl, .vsh, .psh, .fsh
