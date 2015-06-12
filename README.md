@@ -15,17 +15,18 @@ like so:
 
 where `<type>` is one of:
 
-   hlsl
-   glsl
-   cg
-   unity
+    hlsl
+    glsl
+    cg
+    unity
 
 This will force the file to use the specified syntax highlighter. This is case sensitive and must appear exactly as above. Otherwise if the 'shadertype'
 tag is not present, the file extension will be used to decide what type of highlighting to use. The extension mapping is as follows:
 
-   HLSL syntax highlighter - .fx, .fxh, .hlsl, .vsh, .psh, .fsh files
-   GLSL syntax highlighter - .glsl, .frag, .vert, .fp, .vp, .geom files
-   CG syntax highlighter - .cg, .cgfx, files
+    HLSL syntax highlighter - .fx, .fxh, .hlsl, .vsh, .psh, .fsh
+    GLSL syntax highlighter - .glsl, .frag, .vert, .fp, .vp, .geom
+    CG syntax highlighter - .cg, .cgfx
+    Unity syntax highlighter - .shader, .cginc, .compute
 
 The other major change is that the keyword mapping files are now installed alongside the extension and always used.
 
