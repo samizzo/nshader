@@ -19,6 +19,8 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.VisualStudio.Package;
 using Microsoft.VisualStudio.TextManager.Interop;
+using System.Diagnostics;
+using System.Globalization;
 
 namespace NShader
 {
@@ -28,11 +30,13 @@ namespace NShader
         private static NShaderScanner cgScanner;
         private static NShaderScanner unityScanner;
         private static Dictionary<string, NShaderScanner> mapExtensionToScanner;
+        private static Dictionary<string, NShaderScanner> mapTypeToScanner;
 
         static void Init() {
             if (mapExtensionToScanner == null)
             {
                 mapExtensionToScanner = new Dictionary<string, NShaderScanner>();
+                mapTypeToScanner = new Dictionary<string, NShaderScanner>();
 
                 // HLSL Scanner
                 hlslScanner = new NShaderScanner(new HLSLShaderTokenProvider());
@@ -42,6 +46,11 @@ namespace NShader
                 cgScanner = new NShaderScanner(new HLSLShaderTokenProvider());
                 //Unity Scanner
                 unityScanner = new NShaderScanner(new UNITYShaderTokenProvider());
+
+                mapTypeToScanner.Add("hlsl", hlslScanner);
+                mapTypeToScanner.Add("glsl", glslScanner);
+                mapTypeToScanner.Add("cg", cgScanner);
+                mapTypeToScanner.Add("unity", unityScanner);
 
                 foreach (var field in typeof (NShaderSupportedExtensions).GetFields())
                 {
@@ -67,6 +76,30 @@ namespace NShader
             {
                 scanner = hlslScanner;
             }
+
+            try
+            {
+                using (var sr = new StreamReader(filepath))
+                {
+                    var line = sr.ReadLine();
+
+                    /*
+                     * If the first line contains @shadertype=xxxx then xxxx will be used to determine the syntax highlighting.
+                     */
+                    var marker = "// shadertype=";
+                    if (line.StartsWith(marker))
+                    {
+                        var shaderType = line.Substring(marker.Length);
+                        mapTypeToScanner.TryGetValue(shaderType, out scanner);
+                    }
+                }
+            }
+            catch (System.Exception e)
+            {
+                Trace.WriteLine(string.Format(CultureInfo.CurrentCulture, "Warning: Couldn't parse file {0}", filepath));
+                Trace.WriteLine(e.Message);
+            }
+
             return scanner;
         }
 
