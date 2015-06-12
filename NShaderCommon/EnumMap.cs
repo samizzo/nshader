@@ -28,7 +28,11 @@ namespace NShader
     {
         public void Load(string resource)
         {
+#if DEBUG
+            var customResourcePath = Path.Combine(@"..\..\..\NShaderCommon", resource);
+#else
             var customResourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NShader", resource);
+#endif
 
             TextReader textReader;
             if (File.Exists(customResourcePath))
