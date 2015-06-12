@@ -28,6 +28,7 @@ namespace NShader
         public const string HLSL_FXH = ".fxh";
         public const string HLSL_HLSL = ".hlsl";
         public const string HLSL_VSH = ".vsh";
+        public const string HLSL_FSH = ".fsh";
         public const string HLSL_PSH = ".psh";
         public const string SL_FX = ".slfx";
 
