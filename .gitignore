@@ -3,3 +3,4 @@ NShaderVS.sln.DotSettings.user
 NShaderVS/obj/
 NShaderVS/bin/
 *.vtcache
+*.user
