@@ -58,7 +58,6 @@ namespace NShader
                 switch (token)
                 {
                     case ShaderToken.KEYWORD:
-                    case ShaderToken.TYPE:
                     case ShaderToken.KEYWORD_FX:
                         tokenInfo.Color = TokenColor.Keyword;
                         tokenInfo.Type = TokenType.Keyword;
@@ -79,6 +78,10 @@ namespace NShader
                     case ShaderToken.STRING_LITERAL:
                         tokenInfo.Color = TokenColor.String;
                         tokenInfo.Type = TokenType.Literal;
+                        break;
+                    case ShaderToken.TYPE:
+                        tokenInfo.Color = (TokenColor)NShaderLanguageService.ColorID.Type;
+                        tokenInfo.Type = TokenType.Identifier;
                         break;
                     case ShaderToken.INTRINSIC:
                         tokenInfo.Color = (TokenColor)NShaderLanguageService.ColorID.Intrinsic;

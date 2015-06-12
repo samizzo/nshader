@@ -40,6 +40,7 @@ namespace NShader
             Intrinsic = 6,
             Special,
             Preprocessor,
+            Type,
             Unity_Structure,
             Unity_Type,
             Unity_Value,
@@ -61,10 +62,11 @@ namespace NShader
                 new NShaderColorableItem("NShader - Intrinsic", COLORINDEX.CI_MAROON, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Maroon, System.Drawing.Color.Empty, FONTFLAGS.FF_BOLD), //6
                 new NShaderColorableItem("NShader - Special", COLORINDEX.CI_AQUAMARINE, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.MediumBlue, System.Drawing.Color.Empty),        //7
                 new NShaderColorableItem("NShader - Preprocessor", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.DimGray, System.Drawing.Color.Empty),        //8
-                new NShaderColorableItem("NShader - Unity - Structure", COLORINDEX.CI_MAROON, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Blue, System.Drawing.Color.Empty, FONTFLAGS.FF_BOLD), //9
-                new NShaderColorableItem("NShader - Unity - Type", COLORINDEX.CI_AQUAMARINE, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty),        //10
-                new NShaderColorableItem("NShader - Unity - Value", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Maroon, System.Drawing.Color.Empty),        //11
-                new NShaderColorableItem("NShader - Unity - Fixed", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Maroon, System.Drawing.Color.Empty),        //12
+                new NShaderColorableItem("NShader - Type", COLORINDEX.CI_GREEN, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Green, System.Drawing.Color.Empty),        //9
+                new NShaderColorableItem("NShader - Unity - Structure", COLORINDEX.CI_MAROON, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Blue, System.Drawing.Color.Empty, FONTFLAGS.FF_BOLD), //10
+                new NShaderColorableItem("NShader - Unity - Type", COLORINDEX.CI_AQUAMARINE, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty),        //11
+                new NShaderColorableItem("NShader - Unity - Value", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Maroon, System.Drawing.Color.Empty),        //12
+                new NShaderColorableItem("NShader - Unity - Fixed", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Maroon, System.Drawing.Color.Empty),        //13
             };
         }
 
