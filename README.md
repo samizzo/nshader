@@ -33,3 +33,7 @@ The other major change is that the keyword mapping files are now installed along
 I've also made some small changes to the mappings so that certain keywords are now 'types' instead of 'keywords'.
 
 Finally, there is now an additional colour setting for the 'type' keywords (available in the Fonts and Colors dialog).
+
+The latest build is available from:
+
+   http://www.horsedrawngames.com/NShader.vsix
