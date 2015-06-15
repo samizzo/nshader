@@ -3,7 +3,7 @@
 This is a fork of Issam Khalil's Visual Studio 2013 fork of Alexandre Mutel's NShader syntax highlighting Visual Studio extension for shader languages.
 I've cloned it into my own github repository as I prefer to use github rather than CodePlex. The original nshader project is available here:
 
-    https://nshader.codeplex.com/
+https://nshader.codeplex.com/
 
 I have made some changes to Issam's version. You may now override the file type detection by specifying, on the first line of a shader file, a comment
 like so:
@@ -40,4 +40,4 @@ Finally, there is now an additional colour setting for the 'type' keywords (avai
 
 The latest build is available from:
 
-    http://www.horsedrawngames.com/NShader.zip
+http://www.horsedrawngames.com/NShader.zip
