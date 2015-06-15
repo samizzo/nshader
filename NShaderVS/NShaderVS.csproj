@@ -120,20 +120,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="..\NShaderCommon\HLSLKeywords.map">
+    <EmbeddedResource Include="..\NShaderCommon\HLSLKeywords.map">
       <Link>HLSLKeywords.map</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
+    </EmbeddedResource>
     <Content Include="License.rtf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>
     </Content>
-    <Content Include="..\NShaderCommon\GLSLKeywords.map">
+    <EmbeddedResource Include="..\NShaderCommon\GLSLKeywords.map">
       <Link>GLSLKeywords.map</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
+    </EmbeddedResource>
     <None Include="..\NShaderCommon\ShaderMPLexer.lex">
       <Link>Common\ShaderMPLexer.lex</Link>
     </None>
@@ -143,10 +141,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="UNITYKeywords.map">
+    <EmbeddedResource Include="UNITYKeywords.map">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <IncludeInVSIX>true</IncludeInVSIX>
-    </Content>
+    </EmbeddedResource>
     <EmbeddedResource Include="VSPackage2010.resx" />
   </ItemGroup>
   <PropertyGroup>

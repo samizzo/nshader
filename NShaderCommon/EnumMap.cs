@@ -28,24 +28,21 @@ namespace NShader
     {
         public void Load(string resource)
         {
-#if DEBUG
-            var customResourcePath = Path.Combine(@"..\..\..\NShaderCommon", resource);
-#else
-            var path = Path.GetDirectoryName(GetType().Assembly.Location);
-            var customResourcePath = Path.Combine(path, resource);
-#endif
+            Stream file = typeof(T).Assembly.GetManifestResourceStream(typeof(T).Assembly.GetName().Name + "." + resource);
+            TextReader textReader = new StreamReader(file);
+            Load(textReader);
 
-            TextReader textReader;
+            // If the user file exists, then we merge it with the embedded settings.
+            var customResourcePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "NShader", resource);
             if (File.Exists(customResourcePath))
             {
                 textReader = new StreamReader(customResourcePath);
+                Load(textReader, true);
             }
-            else
-            {
-                Stream file = typeof(T).Assembly.GetManifestResourceStream(typeof(T).Assembly.GetName().Name + "." + resource);
-                textReader = new StreamReader(file);
-            }
+        }
 
+        private void Load(TextReader textReader, bool merge = false)
+        {
             string line;
             while ((line = textReader.ReadLine()) != null )
             {
@@ -58,10 +55,16 @@ namespace NShader
                     T enumValue = (T)Enum.Parse(typeof(T), enumName);
                     foreach (string token in values)
                     {
+                        if (merge && ContainsKey(token))
+                        {
+                            Remove(token);
+                        }
+
                         if (!ContainsKey(token))
                         {
                             Add(token, enumValue);
-                        } else
+                        }
+                        else
                         {
                             Trace.WriteLine(string.Format("Warning: token {0} for enum {1} already added for {2}", token, enumValue, this[token]));
                         }
