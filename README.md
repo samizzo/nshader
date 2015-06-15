@@ -1,10 +1,7 @@
 ## NShader
 
-This is a clone of Issam Khalil's Visual Studio 2013 fork of Alexandre Mutel's NShader syntax highlighting Visual Studio extension for shader languages.
-
-I've cloned it into my own github repository as I prefer to use github rather than CodePlex.
-
-The original nshader project is available here:
+This is a fork of Issam Khalil's Visual Studio 2013 fork of Alexandre Mutel's NShader syntax highlighting Visual Studio extension for shader languages.
+I've cloned it into my own github repository as I prefer to use github rather than CodePlex. The original nshader project is available here:
 
    https://nshader.codeplex.com/
 
@@ -28,12 +25,19 @@ tag is not present, the file extension will be used to decide what type of highl
     CG syntax highlighter - .cg, .cgfx
     Unity syntax highlighter - .shader, .cginc, .compute
 
-The other major change is that the keyword mapping files are now installed alongside the extension and always used.
+The user keyword mapping files now override the built-in mappings (in Issam's version duplicates were ignored). NShader will look inside %APPDATA%\NShader
+for custom map files with the following names:
 
-I've also made some small changes to the mappings so that certain keywords are now 'types' instead of 'keywords'.
+    GLSLKeywords.map
+    HLSLKeywords.map
+    UNITYKeywords.map
+
+Any keywords in these files will replace the built-in mapping. For example, if `float` is mapped as a `type` in the built-in mapping, it can be changed
+to a `keyword` by adding it to the override file. Note that the CG highlighter is the same as the HLSL highlighter, so it doesn't have its own mapping.
+I've also made some small changes to the built-in mappings so that certain keywords are now 'types' instead of 'keywords'.
 
 Finally, there is now an additional colour setting for the 'type' keywords (available in the Fonts and Colors dialog).
 
 The latest build is available from:
 
-   http://www.horsedrawngames.com/NShader.vsix
+   http://www.horsedrawngames.com/NShader.zip
