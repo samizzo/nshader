@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="NShader.51a01e9d-eb56-4ee2-a9fd-8212bf6bf2b1" Version="1.53" Language="en-US" Publisher="Alexandre Mutel" />
+        <Identity Id="NShader.51a01e9d-eb56-4ee2-a9fd-8212bf6bf2b1" Version="1.54" Language="en-US" Publisher="Alexandre Mutel" />
         <DisplayName>NShader</DisplayName>
         <Description xml:space="preserve">NShader is an extension to Visual Studio 2013 that provides syntax highlighting for various shader languages including HLSL - GLSL - CG</Description>
         <MoreInfo>https://github.com/samizzo/nshader</MoreInfo>
