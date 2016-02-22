@@ -23,6 +23,7 @@ namespace NShader
     {
         public const string guidNShaderPkgString = "dd9b8cde-96a0-4442-bf6f-083a7f43d453";
         public const string guidNShaderCmdSetString = "79e82a67-e862-42df-ab79-d496ec57cf48";
+        public const string guidNShaderLanguageService = "E1E045DA-7E8D-4DA1-94CC-93E9A1C1E289";
 
         public static readonly Guid guidNShaderCmdSet = new Guid(guidNShaderCmdSetString);
     };

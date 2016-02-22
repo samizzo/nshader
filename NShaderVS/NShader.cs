@@ -64,7 +64,12 @@ namespace NShader
                              EnableFormatSelection =  true,
                              EnableLineNumbers =  true
                              )]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FX)]
+    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_PSH)]
+    [ProvideEditorFactory(typeof(NShaderEditorFactory), 115)]
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.HLSL_PSH, 32, NameResourceID = 115)]
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), ".*", 1)]
+    [ProvideEditorLogicalView(typeof(NShaderEditorFactory), VSConstants.LOGVIEWID.TextView_string)]
+    /*[ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FX)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FXH)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_HLSL)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_VSH)]
@@ -83,10 +88,12 @@ namespace NShader
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.CG_CGFX)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_SHADER)]
     [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_CGINC)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_COMPUTE)]
+    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_COMPUTE)]*/
     [Guid(GuidList.guidNShaderPkgString)]
     public sealed class NShader : Package, IVsInstalledProduct
     {
+        private NShaderEditorFactory m_editorFactory;
+
         /// <summary>
         /// Default constructor of the package.
         /// Inside this method you can place any initialization code that does not require 
@@ -111,6 +118,9 @@ namespace NShader
         {
             Trace.WriteLine (string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
             base.Initialize();
+
+            m_editorFactory = new NShaderEditorFactory(this);
+            RegisterEditorFactory(m_editorFactory);
 
             // Proffer the service.
             IServiceContainer serviceContainer = this as IServiceContainer;

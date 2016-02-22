@@ -28,6 +28,7 @@ using Microsoft.Win32;
 
 namespace NShader
 {
+    [Guid(GuidList.guidNShaderLanguageService)]
     public class NShaderLanguageService : LanguageService
     {
         private ColorableItem[] m_colorableItems;
@@ -105,6 +106,12 @@ namespace NShader
             string filePath = FilePathUtilities.GetFilePath(buffer);
             // Return dynamic scanner based on file extension
             return NShaderScannerFactory.GetShaderScanner(filePath);
+        }
+
+        public override int GetFileExtensions(out string extensions)
+        {
+            extensions = NShaderSupportedExtensions.HLSL_FX + ";" + NShaderSupportedExtensions.HLSL_HLSL + ";" + NShaderSupportedExtensions.HLSL_PSH;
+            return VSConstants.S_OK;
         }
 
         public override Source CreateSource(IVsTextLines buffer)
