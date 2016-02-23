@@ -51,8 +51,7 @@ Finally, there is now an additional colour setting for the 'type' keywords (avai
 
 The latest build is available from:
 
-http://www.horsedrawngames.com/NShader2013.zip
-
+http://www.horsedrawngames.com/NShader2013.zip  
 http://www.horsedrawngames.com/NShader2015.zip
 
 This README and the built-in mappings are available in the zip file for reference.
