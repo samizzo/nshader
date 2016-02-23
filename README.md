@@ -36,6 +36,9 @@ the Solution Explorer) it will work. This seems like a bug in Visual Studio, bec
 
 Note that if you add a file extension or use the `shadertype` tag you will need to close and re-open any currently open files to reflect the changes.
 
+The existing file extensions that NShader previously recognised are still recognised, so if you are using any of those file types you don't have to do
+anything extra.
+
 The user keyword mapping files now override the built-in mappings (in Issam's version duplicates were ignored). NShader will look inside %APPDATA%\NShader
 for custom map files with the following names:
 
