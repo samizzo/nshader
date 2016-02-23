@@ -108,12 +108,6 @@ namespace NShader
             return NShaderScannerFactory.GetShaderScanner(filePath);
         }
 
-        public override int GetFileExtensions(out string extensions)
-        {
-            extensions = NShaderSupportedExtensions.HLSL_FX + ";" + NShaderSupportedExtensions.HLSL_HLSL + ";" + NShaderSupportedExtensions.HLSL_PSH;
-            return VSConstants.S_OK;
-        }
-
         public override Source CreateSource(IVsTextLines buffer)
         {
             return new NShaderSource(this, buffer, GetColorizer(buffer));

@@ -30,8 +30,7 @@ namespace NShader
         public const string HLSL_VSH = ".vsh";
         public const string HLSL_FSH = ".fsh";
         public const string HLSL_PSH = ".psh";
-        public const string SL_FX = ".slfx";
-        public const string UNREAL_SHADER = ".usf";
+        public const string HLSL_USF = ".usf";
 
         // GLSL file extensions
         public const string GLSL_FRAG = ".frag";

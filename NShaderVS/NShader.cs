@@ -43,11 +43,6 @@ namespace NShader
     // This attribute tells the registration utility (regpkg.exe) that this class needs
     // to be registered as package.
     [PackageRegistration(UseManagedResourcesOnly = true)]
-    // A Visual Studio component can be registered under different regitry roots; for instance
-    // when you debug your package you want to register it in the experimental hive. This
-    // attribute specifies the registry root to use if no one is provided to regpkg.exe with
-    // the /root switch.
-    [DefaultRegistryRoot("Software\\Microsoft\\VisualStudio\\12.0")]
 
     // This attribute is used to register the informations needed to show the this package
     // in the Help/About dialog of Visual Studio.
@@ -64,36 +59,69 @@ namespace NShader
                              EnableFormatSelection =  true,
                              EnableLineNumbers =  true
                              )]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_PSH)]
-    [ProvideEditorFactory(typeof(NShaderEditorFactory), 115)]
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.HLSL_PSH, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_PSH)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.HLSL_FX, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FX)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.HLSL_FXH, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FXH)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.HLSL_HLSL, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_HLSL)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.HLSL_VSH, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_VSH)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.HLSL_FSH, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FSH)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.HLSL_USF, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_USF)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_FRAG, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_FRAG)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_VERT, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_VERT)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_FP, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_FP)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_VP, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_VP)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_GEOM, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_GEOM)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_GLSL, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_GLSL)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_XSH, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_XSH)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.CG_CG, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.CG_CG)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.CG_CGFX, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.CG_CGFX)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.UNITY_SHADER, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_SHADER)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.UNITY_CGINC, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_CGINC)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.UNITY_COMPUTE, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_COMPUTE)]
+
+    [ProvideEditorFactory(typeof(NShaderEditorFactory), 115)]
     [ProvideEditorExtension(typeof(NShaderEditorFactory), ".*", 1)]
     [ProvideEditorLogicalView(typeof(NShaderEditorFactory), VSConstants.LOGVIEWID.TextView_string)]
-    /*[ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FX)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FXH)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_HLSL)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_VSH)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_FSH)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_PSH)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNREAL_SHADER)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.SL_FX)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_FRAG)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_VERT)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_FP)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_VP)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_GEOM)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_GLSL)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_XSH)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.CG_CG)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.CG_CGFX)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_SHADER)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_CGINC)]
-    [ProvideLanguageExtensionAttribute(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_COMPUTE)]*/
     [Guid(GuidList.guidNShaderPkgString)]
     public sealed class NShader : Package, IVsInstalledProduct
     {
-        private NShaderEditorFactory m_editorFactory;
-
         /// <summary>
         /// Default constructor of the package.
         /// Inside this method you can place any initialization code that does not require 
@@ -119,8 +147,8 @@ namespace NShader
             Trace.WriteLine (string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
             base.Initialize();
 
-            m_editorFactory = new NShaderEditorFactory(this);
-            RegisterEditorFactory(m_editorFactory);
+            var editorFactory = new NShaderEditorFactory(this);
+            RegisterEditorFactory(editorFactory);
 
             // Proffer the service.
             IServiceContainer serviceContainer = this as IServiceContainer;
