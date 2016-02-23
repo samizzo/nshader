@@ -51,7 +51,7 @@ namespace NShader
 
 
     [ProvideService(typeof(NShaderLanguageService), ServiceName = "Shader Language Service")]
-    [ProvideLanguageServiceAttribute(typeof(NShaderLanguageService),
+    [ProvideLanguageService(typeof(NShaderLanguageService),
                              "NShader",
                              114,
                              RequestStockColors = false,
