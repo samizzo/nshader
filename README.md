@@ -34,6 +34,8 @@ applied. However, the extension still appears in the list. To work around this y
 2015 if you load a file from the "recently used" list it doesn't seem to use the syntax highlighter, but if you load it from elsewhere (e.g. file->open or
 the Solution Explorer) it will work. This seems like a bug in Visual Studio, because it worked in VS 2013.
 
+Note that if you add a file extension or use the `shadertype` tag you will need to close and re-open any currently open files to reflect the changes.
+
 The user keyword mapping files now override the built-in mappings (in Issam's version duplicates were ignored). NShader will look inside %APPDATA%\NShader
 for custom map files with the following names:
 
