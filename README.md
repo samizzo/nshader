@@ -25,6 +25,13 @@ tag is not present, the file extension will be used to decide what type of highl
     CG syntax highlighter - .cg, .cgfx
     Unity syntax highlighter - .shader, .cginc, .compute
 
+You can also add extra extensions in Tools->Options->Text Editor->File Extension. Type in the file extension, select "NShader Editor" in the dropdown, and
+click "Add". Then when you open a file with any of those extensions they will use the NShader syntax highlighter. It seems that there is a bug in at least
+Visual Studio 2013 and possibly earlier versions where the setting can be forgotten and when you open a file in the list the syntax highlighting is not
+applied. However, the extension still appears in the list. To work around this you must remove and re-add the extension to the list. Also in Visual Studio
+2015 if you load a file from the "recently used" list it doesn't seem to use the syntax highlighter, but if you load it from elsewhere (e.g. file->open or
+the Solution Explorer) it will work. This seems like a bug in Visual Studio, because it worked in VS 2013.
+
 The user keyword mapping files now override the built-in mappings (in Issam's version duplicates were ignored). NShader will look inside %APPDATA%\NShader
 for custom map files with the following names:
 
@@ -40,6 +47,7 @@ Finally, there is now an additional colour setting for the 'type' keywords (avai
 
 The latest build is available from:
 
-http://www.horsedrawngames.com/NShader.zip
+http://www.horsedrawngames.com/NShader2013.zip
+http://www.horsedrawngames.com/NShader2015.zip
 
 This README and the built-in mappings are available in the zip file for reference.
