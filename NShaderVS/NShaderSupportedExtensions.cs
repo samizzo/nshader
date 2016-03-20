@@ -40,6 +40,7 @@ namespace NShader
         public const string GLSL_GEOM = ".geom";
         public const string GLSL_GLSL = ".glsl";
         public const string GLSL_XSH = ".xsh";
+        public const string GLSL_COMP = ".comp";
 
         // CG file extensions
         public const string CG_CG = ".cg";
