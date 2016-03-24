@@ -111,6 +111,7 @@
     <Compile Include="NShaderSupportedExtensions.cs" />
     <Compile Include="NShaderVersion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProvideFileExtensionMappingAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="NShaderVS.png">
