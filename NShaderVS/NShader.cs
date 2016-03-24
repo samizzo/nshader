@@ -119,9 +119,10 @@ namespace NShader
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.UNITY_COMPUTE, 32, NameResourceID = 115)]
     [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_COMPUTE)]
 
+    [ProvideEditorFactory(typeof(NShaderEditorFactory), 115)]
     [ProvideEditorExtension(typeof(NShaderEditorFactory), ".*", 1)]
     [ProvideEditorLogicalView(typeof(NShaderEditorFactory), VSConstants.LOGVIEWID.TextView_string)]
-    [ProvideFileExtensionMapping("{DC7F5FDF-2F05-47CA-AEE4-D6DA84F5B326}", 115, typeof(NShaderEditorFactory), typeof(NShader), 32)]
+    //[ProvideFileExtensionMapping("{DC7F5FDF-2F05-47CA-AEE4-D6DA84F5B326}", 115, typeof(NShaderEditorFactory), typeof(NShader), 32)]
     [Guid(GuidList.guidNShaderPkgString)]
     public sealed class NShader : Package, IVsInstalledProduct
     {
