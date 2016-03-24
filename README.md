@@ -52,9 +52,9 @@ I've also made some small changes to the built-in mappings so that certain keywo
 
 Finally, there is now an additional colour setting for the 'type' keywords (available in the Fonts and Colors dialog).
 
-The latest build is available from:
+The latest build is available from Github in the releases section:
 
-http://www.horsedrawngames.com/NShader.zip
+https://github.com/samizzo/nshader
 
 The above build can be used to install NShader in both VS 2013 and 2015.
 
