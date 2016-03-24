@@ -50,7 +50,6 @@ namespace NShader
     [InstalledProductRegistration("#110", "#112", NShaderVersion.VERSION, IconResourceID = 400)]
 
 
-    [ProvideService(typeof(NShaderLanguageService), ServiceName = "Shader Language Service")]
     [ProvideLanguageService(typeof(NShaderLanguageService),
                              "NShader",
                              114,
@@ -101,7 +100,7 @@ namespace NShader
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_XSH, 32, NameResourceID = 115)]
     [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_XSH)]
 	
-	[ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_COMP, 32, NameResourceID = 115)]
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_COMP, 32, NameResourceID = 115)]
     [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_COMP)]
 
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.CG_CG, 32, NameResourceID = 115)]
@@ -119,10 +118,9 @@ namespace NShader
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.UNITY_COMPUTE, 32, NameResourceID = 115)]
     [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.UNITY_COMPUTE)]
 
-    [ProvideEditorFactory(typeof(NShaderEditorFactory), 115)]
-    [ProvideEditorExtension(typeof(NShaderEditorFactory), ".*", 1)]
-    [ProvideEditorLogicalView(typeof(NShaderEditorFactory), VSConstants.LOGVIEWID.TextView_string)]
-    //[ProvideFileExtensionMapping("{DC7F5FDF-2F05-47CA-AEE4-D6DA84F5B326}", 115, typeof(NShaderEditorFactory), typeof(NShader), 32)]
+    [ProvideEditorFactory(typeof(NShaderEditorFactory), 115, CommonPhysicalViewAttributes = (int) __VSPHYSICALVIEWATTRIBUTES.PVA_SupportsPreview, TrustLevel = __VSEDITORTRUSTLEVEL.ETL_AlwaysTrusted)]
+    [ProvideEditorLogicalView(typeof(NShaderEditorFactory), VSConstants.LOGVIEWID.TextView_string, IsTrusted = true)]
+    [ProvideFileExtensionMapping("{DC7F5FDF-2F05-47CA-AEE4-D6DA84F5B326}", 115, typeof(NShaderEditorFactory), typeof(NShader), typeof(NShaderLanguageService), 32)]
     [Guid(GuidList.guidNShaderPkgString)]
     public sealed class NShader : Package, IVsInstalledProduct
     {
