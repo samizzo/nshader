@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="NShader.51a01e9d-eb56-4ee2-a9fd-8212bf6bf2b1" Version="1.6" Language="en-US" Publisher="Alexandre Mutel" />
+        <Identity Id="NShader.51a01e9d-eb56-4ee2-a9fd-8212bf6bf2b1" Version="2.0" Language="en-US" Publisher="Alexandre Mutel" />
         <DisplayName>NShader</DisplayName>
-        <Description xml:space="preserve">NShader is an extension to Visual Studio 2013 that provides syntax highlighting for various shader languages including HLSL - GLSL - CG</Description>
+        <Description xml:space="preserve">NShader is an extension to Visual Studio that provides syntax highlighting for various shader languages including HLSL - GLSL - CG</Description>
         <MoreInfo>https://github.com/samizzo/nshader</MoreInfo>
         <License>License.rtf</License>
         <Icon>PackageIcon.ico</Icon>
         <PreviewImage>NShaderVS.png</PreviewImage>
     </Metadata>
     <Installation InstalledByMsi="false">
-        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0]" />
-        <InstallationTarget Version="[14.0,15.0)" Id="Microsoft.VisualStudio.Pro" />
-        <InstallationTarget Version="[14.0,15.0)" Id="Microsoft.VisualStudio.Enterprise" />
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[12.0,15.0]" />
+        <InstallationTarget Version="[12.0,15.0]" Id="Microsoft.VisualStudio.Enterprise" />
+        <InstallationTarget Version="[12.0,15.0]" Id="Microsoft.VisualStudio.Ultimate" />
+        <InstallationTarget Version="[12.0,15.0]" Id="Microsoft.VisualStudio.Premium" />
     </Installation>
     <Dependencies>
         <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
