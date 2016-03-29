@@ -22,8 +22,8 @@ where `<type>` is one of:
 This will force the file to use the specified syntax highlighter. This is case sensitive and must appear exactly as above. Otherwise if the `shadertype`
 tag is not present, the file extension will be used to decide what type of highlighting to use. The extension mapping is as follows:
 
-    HLSL syntax highlighter - .fx, .fxh, .hlsl, .vsh, .psh, .fsh
-    GLSL syntax highlighter - .glsl, .frag, .vert, .fp, .vp, .geom
+    HLSL syntax highlighter - .fx, .fxh, .hlsl, .vsh, .psh, .fsh, .usf
+    GLSL syntax highlighter - .glsl, .frag, .vert, .fp, .vp, .geom, .xsh, .comp
     CG syntax highlighter - .cg, .cgfx
     Unity syntax highlighter - .shader, .cginc, .compute
 
