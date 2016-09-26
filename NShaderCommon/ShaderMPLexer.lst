@@ -4,7 +4,7 @@ NFSA Summary for input file <ShaderMPLexer.lex>
 =============================================================================
 Number of Start Conditions = 2
 Start condition INITIAL:
-  number of patterns = 44, number of nfsa states = 198, accept states = 44
+  number of patterns = 44, number of nfsa states = 201, accept states = 44
 Start condition COMMENT:
   number of patterns = 3, number of nfsa states = 19, accept states = 3
 =============================================================================
@@ -12,24 +12,27 @@ DFSA Summary
 =============================================================================
 Number of dfsa instances = 2
 Start condition INITIAL:
-  number of dfsa states = 93, number of accept states = 74
+  number of dfsa states = 97, number of accept states = 75
 Start condition COMMENT:
   number of dfsa states = 5, number of accept states = 5
 =============================================================================
 MPLEX Summary
 =============================================================================
-Total number of states = 72, total accept states = 59, backup states = 6
+Total number of states = 75, total accept states = 60, backup states = 8
 Automaton will cater for left-anchored patterns
-Original state number was 99, minimized machine has 72 states
-Compression summary: used 292 nextstate entries, plus 126 map entries
-- Uncompressed automaton would have 4 718 592 nextstate entries
+Original state number was 103, minimized machine has 75 states
+Compression summary: used 365 nextstate entries, plus 126 map entries
+- Uncompressed automaton would have 4 915 200 nextstate entries
 - Input characters are packed into 35 equivalence classes
 - CharClass compression 99,95%, 35 entries Vs 65 536
-- Nextstate table compression 88,41%, 292 entries Vs 2 520
+- Nextstate table compression 86,10%, 365 entries Vs 2 625
 - CharacterMap compression is 99,81%, 126 entries Vs 65 536
 - Decision tree depth is 1
 
 Backup state report --- 
+In <0>, after "^\t" automaton could accept "{white_space}" in state 1
+--- after '\n' automaton is in a non-accept state and might need to backup
+
 In <0>, after ":" automaton could accept "." in state 5
 --- after '\n' automaton is in a non-accept state and might need to backup
 
@@ -40,6 +43,9 @@ In <0>, after "0" automaton could accept "{digit}+" in state 8
 --- after 'x' automaton is in a non-accept state and might need to backup
 
 In <0>, after """ automaton could accept "." in state 12
+--- after '\n' automaton is in a non-accept state and might need to backup
+
+In <0>, after "^#" automaton could accept "." in state 13
 --- after '\n' automaton is in a non-accept state and might need to backup
 
 In <0>, after ".1" automaton could accept "{digit}*"."{digit}+({exponent})?({floatsuffix})?" in state 38
