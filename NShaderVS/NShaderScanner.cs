@@ -95,6 +95,29 @@ namespace NShader
                         tokenInfo.Color = (TokenColor)NShaderLanguageService.ColorID.Preprocessor;
                         tokenInfo.Type = TokenType.Keyword;
                         break;
+                    case ShaderToken.OPERATOR:
+                        tokenInfo.Color = (TokenColor)NShaderLanguageService.ColorID.Operator;
+                        tokenInfo.Type = TokenType.Operator;
+                        break;
+                    case ShaderToken.DELIMITER:
+                        tokenInfo.Color = (TokenColor)NShaderLanguageService.ColorID.Delimiter;
+                        tokenInfo.Type = TokenType.Delimiter;
+                        break;
+                    case ShaderToken.LEFT_BRACKET:
+                    case ShaderToken.RIGHT_BRACKET:
+                        tokenInfo.Color = (TokenColor)NShaderLanguageService.ColorID.Bracket;
+                        tokenInfo.Type = TokenType.Delimiter;
+                        break;
+                    case ShaderToken.LEFT_PARENTHESIS:
+                    case ShaderToken.RIGHT_PARENTHESIS:
+                        tokenInfo.Color = (TokenColor)NShaderLanguageService.ColorID.Parenthesis;
+                        tokenInfo.Type = TokenType.Delimiter;
+                        break;
+                    case ShaderToken.LEFT_SQUARE_BRACKET:
+                    case ShaderToken.RIGHT_SQUARE_BRACKET:
+                        tokenInfo.Color = (TokenColor)NShaderLanguageService.ColorID.Square_Bracket;
+                        tokenInfo.Type = TokenType.Delimiter;
+                        break;
                     case ShaderToken.UNITY_STRUCTURE:
                         tokenInfo.Color = (TokenColor)NShaderLanguageService.ColorID.Unity_Structure;
                         tokenInfo.Type = TokenType.Identifier;
