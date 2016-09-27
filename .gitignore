@@ -4,3 +4,7 @@ NShaderVS/obj/
 NShaderVS/bin/
 *.vtcache
 *.user
+/.vs
+/NShaderVS/packages.config
+/packages/
+/NShaderVS/Fakes/

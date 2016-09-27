@@ -31,6 +31,7 @@ namespace NShader
         public const string HLSL_FSH = ".fsh";
         public const string HLSL_PSH = ".psh";
         public const string HLSL_USF = ".usf";
+        public const string HLSL_SLFX = ".slfx";
 
         // GLSL file extensions
         public const string GLSL_FRAG = ".frag";
@@ -41,6 +42,7 @@ namespace NShader
         public const string GLSL_GLSL = ".glsl";
         public const string GLSL_XSH = ".xsh";
         public const string GLSL_COMP = ".comp";
+        public const string GLSL_SFX = ".sfx";
 
         // CG file extensions
         public const string CG_CG = ".cg";

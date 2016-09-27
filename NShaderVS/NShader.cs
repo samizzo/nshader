@@ -79,6 +79,9 @@ namespace NShader
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.HLSL_USF, 32, NameResourceID = 115)]
     [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_USF)]
 
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.HLSL_SLFX, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.HLSL_SLFX)]
+
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_FRAG, 32, NameResourceID = 115)]
     [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_FRAG)]
 
@@ -102,6 +105,9 @@ namespace NShader
 	
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_COMP, 32, NameResourceID = 115)]
     [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_COMP)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_SFX, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_SFX)]
 
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.CG_CG, 32, NameResourceID = 115)]
     [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.CG_CG)]

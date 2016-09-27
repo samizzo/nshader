@@ -46,6 +46,12 @@ namespace NShader
             Unity_Type,
             Unity_Value,
             Unity_Fixed,
+
+            Delimiter,
+            Operator,
+            Bracket,
+            Parenthesis,
+            Square_Bracket,
         }
 
         public NShaderLanguageService()
@@ -68,6 +74,12 @@ namespace NShader
                 new NShaderColorableItem("NShader - Unity - Type", COLORINDEX.CI_AQUAMARINE, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.DodgerBlue, System.Drawing.Color.Empty),        //11
                 new NShaderColorableItem("NShader - Unity - Value", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Maroon, System.Drawing.Color.Empty),        //12
                 new NShaderColorableItem("NShader - Unity - Fixed", COLORINDEX.CI_DARKGRAY, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.Maroon, System.Drawing.Color.Empty),        //13
+
+                new NShaderColorableItem("NShader - Delimiter", COLORINDEX.CI_BROWN, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.DimGray, System.Drawing.Color.Empty),        //14
+                new NShaderColorableItem("NShader - Operator", COLORINDEX.CI_BROWN, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.DimGray, System.Drawing.Color.Empty),        //15
+                new NShaderColorableItem("NShader - Bracket", COLORINDEX.CI_BROWN, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.DimGray, System.Drawing.Color.Empty),        //16
+                new NShaderColorableItem("NShader - Parenthesis", COLORINDEX.CI_BROWN, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.DimGray, System.Drawing.Color.Empty),        //17
+                new NShaderColorableItem("NShader - Square Bracket", COLORINDEX.CI_BROWN, COLORINDEX.CI_USERTEXT_BK, System.Drawing.Color.DimGray, System.Drawing.Color.Empty),        //18
             };
         }
 
@@ -163,7 +175,6 @@ namespace NShader
             {
                 return null;
             }
-
 
             public override string Goto(VSConstants.VSStd97CmdID cmd, IVsTextView textView, int line, int col, out TextSpan span)
             {

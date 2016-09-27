@@ -97,7 +97,7 @@ ABStar       [^\*\n]*
 
 \"(\\.|[^\\"])*\"			{return (int)ShaderToken.STRING_LITERAL;}
 
-^{white_space}*#{alpha}+    {return (int)ShaderToken.PREPROCESSOR;}
+^{white_space}*#{white_space}*{alpha}+    {return (int)ShaderToken.PREPROCESSOR;}
 
 /**********************************************************************************/
 /***************************Operators And Special Signs****************************/
