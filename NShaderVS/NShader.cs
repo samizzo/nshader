@@ -109,6 +109,12 @@ namespace NShader
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_SFX, 32, NameResourceID = 115)]
     [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_SFX)]
 
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_TESC, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_TESC)]
+
+    [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.GLSL_TESE, 32, NameResourceID = 115)]
+    [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.GLSL_TESE)]
+
     [ProvideEditorExtension(typeof(NShaderEditorFactory), NShaderSupportedExtensions.CG_CG, 32, NameResourceID = 115)]
     [ProvideLanguageExtension(typeof(NShaderLanguageService), NShaderSupportedExtensions.CG_CG)]
 

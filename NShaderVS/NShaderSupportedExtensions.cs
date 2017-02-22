@@ -43,6 +43,8 @@ namespace NShader
         public const string GLSL_XSH = ".xsh";
         public const string GLSL_COMP = ".comp";
         public const string GLSL_SFX = ".sfx";
+        public const string GLSL_TESC = ".tesc";
+        public const string GLSL_TESE = ".tese";
 
         // CG file extensions
         public const string CG_CG = ".cg";
