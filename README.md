@@ -56,6 +56,6 @@ The latest build is available from Github in the releases section:
 
 https://github.com/samizzo/nshader
 
-The above build can be used to install NShader in both VS 2013 and 2015.
+The above build can be used to install NShader in both VS 2013, 2015, and 2017.
 
 This README and the built-in mappings are available in the zip file for reference.
